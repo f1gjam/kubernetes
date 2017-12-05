@@ -67,7 +67,7 @@ make config
 
 You will now be asked a list of questions. I have included the questions below with example answers
 
-**Note:** The default answer is in the square brackers []. If you are happy with this, just press return. Also in regards to the sizing (CPU, Memory and number of servers), this something you will need to adjust for your LAB/Dev environment
+**Note:** The default answer is in the square brackets []. If you are happy with this, just press return. Also in regards to the sizing (CPU, Memory and number of servers), this something you will need to adjust for your LAB/Dev environment
 
 ```
 number of nodes (phase1.num_nodes) [4] (NEW)
@@ -145,6 +145,12 @@ kube_dash_ip=$(kubectl describe pod $kube_dashboard_pod_name --namespace=kube-sy
 kube_dash_port=$(kubectl describe service kubernetes-dashboard --namespace=kube-system| grep -i NodePort: | awk '{print $3}' | awk -F "/" '{print $1}')
 echo
 echo "Dashboard Address: http://$kube_dash_ip:$kube_dash_port"
+```
+
+You should get the output
+
+```
+Dashboard Address: http://192.168.10.182:30398
 ```
 
 You can now visit the Kubernetes Dashboard URL
