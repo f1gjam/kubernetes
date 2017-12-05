@@ -137,6 +137,18 @@ export KUBECONFIG=~/kubeconfig.json
 
 Your installation is now complete. You just need to get the Kubernetes Dashboard url.
 
+One way to access the dashboard (Recommended) is to use 'kubectl cli'. Execute the following command
+
+```
+kubectl proxy
+```
+This will create a localhost proxy to the Kubernetes cluster. You can now visit the dashboard via
+```
+http://localhost:8001/ui
+```
+
+Alternatively, you can do the following:
+
 Execute the following commands. Once executed, the Kubernetes Dashboard address and port (URL) will be provided.
 
 ```
